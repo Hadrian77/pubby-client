@@ -1,2 +1,2 @@
-	# pubby.io
-Web client for player-centered trivia game.
+# pubby.io
+ Web client for player-centered trivia game.
