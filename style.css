@@ -33,4 +33,5 @@ h1 {
 .answer {
   padding: 30px;
   display: inline-block;
+  cursor: pointer;
 }
