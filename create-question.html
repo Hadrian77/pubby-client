@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pubby</title>
+    <link rel="stylesheet" href="create-question.css" />
+  </head>
+  <body>
+    <main>
+      <form id="questionForm">
+        <label for="description">Question</label></br>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="40"
+          form="questionForm"
+        ></textarea>
+        <div class="type">
+            <label for="type">Type</label></br>
+            <input type="text" id="type" name="type" /></br>
+        </div>
+        </br>
+        <div class="pack">
+            <label for="pack">Pack</label></br>
+            <input type="text" id="pack" name="pack" /></br>
+        </div>
+        </br>
+        <div class="answers">
+            <label for="answer1">Answers</label>
+            <button type="button" onclick="addAnswer()" >+</button></br>
+            <input type="text" class="answer" name="answer1" id="answer1"  />
+        </div>
+        </br>
+        <div class="tags">
+            <label for="tag1">Tags</label>
+            <button type="button" onclick="addTag()">+</button></br>
+            <input type="text" class="tag" name="tag1" id="tag1" />
+        </div>
+        </br>
+        <div class="keywords">
+            <label for="keyword1">Keywords</label>
+            <button type="button" onclick="addKeyword()" >+</button></br>
+            <input type="text" class="keyword"  name="keyword1" id="keyword1" />
+        </div>
+        <br/>
+        <button onclick="createQuestion()" type="button" value="Submit">Submit</button>
+      </form>
+    </main>
+
+    <script src="create-question.js"></script>
+  </body>
+</html>

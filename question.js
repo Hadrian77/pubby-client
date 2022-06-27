@@ -1,5 +1,5 @@
 const urlDomain = "http://localhost:8080";
-const sessionId = "62b547515c8fb44dc90fc26e";
+const sessionId = "62b57c8bf4cf7a52038a4c6e";
 const playerId = "62b52e46158b496816c6fe2e";
 let questionCounter = 0;
 let session;
