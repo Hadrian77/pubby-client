@@ -49,15 +49,6 @@ function getParameters() {
   return map;
 }
 
-function getAnswerArray(parameterMap) {
-  let answers = new Array();
-  for (let i = 0; i < answerCount; i++) {
-    answers.push(parameterMap.get("answer" + answerCount));
-  }
-  console.log(answers);
-  return answers;
-}
-
 function getTagArray(parameterMap) {
   let tags = new Array();
   for (let i = 0; i < tagCount; i++) {
@@ -76,38 +67,4 @@ function getKeywordArray(parameterMap) {
   return keywords;
 }
 
-function addAnswer() {
-  answerCount++;
-  const answersElement = document.querySelector(".answers");
-  const answerName = "answer" + answerCount;
-  const answerElement = document.createElement("input");
-  answerElement.type = "text";
-  answerElement.classList.add("answer");
-  answerElement.name = answerName;
-  answerElement.id = answerName;
-  answersElement.appendChild(answerElement);
-}
-
-function addTag() {
-  tagCount++;
-  const tagsElement = document.querySelector(".tags");
-  const tagName = "tag" + tagCount;
-  const tagElement = document.createElement("input");
-  tagElement.type = "text";
-  tagElement.classList.add("tag");
-  tagElement.name = tagName;
-  tagElement.id = tagName;
-  tagsElement.appendChild(tagElement);
-}
-
-function addKeyword() {
-  keywordCount++;
-  const keywordsElement = document.querySelector(".keywords");
-  const keywordName = "keyword" + keywordCount;
-  const keywordElement = document.createElement("input");
-  keywordElement.type = "text";
-  keywordElement.classList.add("keyword");
-  keywordElement.name = keywordName;
-  keywordElement.id = keywordName;
-  keywordsElement.appendChild(keywordElement);
-}
+createQuestion();
