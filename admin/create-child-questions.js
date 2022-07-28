@@ -16,8 +16,6 @@ async function createQuestion() {
     tags: parameterMap.get("tags"),
   };
 
-  sessionStorage.setItem("parentQuestion", question);
-
   requestData = {
     method: "POST",
     mode: "cors",
@@ -101,7 +99,7 @@ function addQuestion(label, description) {
 
 function displayQuestionTemplates() {
   let parentQuestion = JSON.parse(sessionStorage.getItem("parentQuestion"));
-  let childQuestionMap = new Map();
+  let childQuestionArray = [];
   console.log(parentQuestion.type);
   switch (parentQuestion.type) {
     case "left_or_right":
@@ -110,7 +108,9 @@ function displayQuestionTemplates() {
           "How would {subjectPlayerName} respond to the following question:\n" +
           parentQuestion.description,
         answers: parentQuestion.answers,
+        type: "left_or_right_guess_what",
       };
+      childQuestionArray.push(leftOrRightGuessWhat);
       addQuestion(
         "Left or Right? Guess What",
         leftOrRightGuessWhat.description
@@ -123,6 +123,10 @@ function displayQuestionTemplates() {
     default:
     // code block
   }
+  sessionStorage.setItem(
+    "childQuestionArray",
+    JSON.stringify(childQuestionArray)
+  );
 }
 
 createQuestion();
